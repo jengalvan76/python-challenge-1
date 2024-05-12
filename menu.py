@@ -160,30 +160,27 @@ while place_order:
             while True:
         # Ask the customer if they would like to order anything else
                 keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o ")
-        if Y:
-            print("Continue to Order")
-        else:
-            break
-
+       
         # 5. Check the customer's input
-        if menu_items in order:
-         print ("Thank you for ordering")
-        else:
-         print("We do not have")
+                match keep_ordering.lower():
+                # Customer chose yes
+                    case 'y':
                 # Keep ordering
-
+                        place_order = True
                 # Exit the keep ordering question loop
-        break 
+                break
+                # Customer chose no
+                case: 'n'
                 # Complete the order
-
+                place_order = False
                 # Since the customer decided to stop ordering, thank them for
                 # their order
-        print("Thank you for ordering")
+                print("Thank you for your order.")
                 # Exit the keep ordering question loop
-        break
+                break
 
                 # Tell the customer to try again
-    print("Try again")
+                print("Try again")
 
 # Print out the customer's order
 print("This is what we are preparing for you.\n")
@@ -195,10 +192,10 @@ print("Item name                 | Price  | Quantity")
 print("--------------------------|--------|----------")
 
 # 6. Loop through the items in the customer's order
-for user_selection in menu_items:
+for user_selection in menu_items.keys():
      print ("Preparing")
     # 7. Store the dictionary items as variables
-item, quanity, price = menu_items
+    
 
     # 8. Calculate the number of spaces for formatted printing
 field_width = 20
