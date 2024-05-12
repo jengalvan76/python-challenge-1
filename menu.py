@@ -80,6 +80,7 @@ while place_order:
 
     # Get the customer's input
     menu_category = input("Type menu number: ")
+    print("Type menu category")
 
     # Check if the customer's input is a number
     if menu_category.isdigit():
@@ -122,11 +123,10 @@ while place_order:
 
             # 3. Check if the customer typed a number
             if menu_item_number.isdigit():
-               print("You entered a number.")
-            else:
-                print("You did not enter a number.")
+                print("You entered a number.")
+           
                 # Convert the menu selection to an integer
-                menu_item_number = "int()"
+                menu_item_number = int(menu_item_number)
 
                 # 4. Check if the menu selection is in the menu items
                 if menu_item_number in menu_items.keys():
@@ -143,7 +143,11 @@ while place_order:
                         quantity = 1
 
                     # Add the item name, price, and quantity to the order list
-                    order.append("item name","price", "quantity")
+                    order.append ({
+                        "item name": item_name,
+                        "price": menu_item_number,
+                        "quantity":quantity,
+                        })
     
                     # Tell the customer that their input isn't valid
                     customer_input = "Not Valid"
@@ -151,36 +155,43 @@ while place_order:
                 # Tell the customer they didn't select a menu option
             
                 else:
+
             # Tell the customer they didn't select a menu option
-                 print(f"{menu_category} was not a menu option.")
+
+                    print(f"{menu_category} was not a menu option.")
 
         # Tell the customer they didn't select a number
             print("You didn't select a number.")
 
             while True:
         # Ask the customer if they would like to order anything else
+                print("Entering a While Loop")
                 keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o ")
-       
+                print("I have ordered something")
         # 5. Check the customer's input
                 match keep_ordering.lower():
+
                 # Customer chose yes
                     case 'y':
+                        print("Yes")
                 # Keep ordering
                         place_order = True
-                # Exit the keep ordering question loop
-                break
+                        break
                 # Customer chose no
-                case: 'n'
+                    case 'n':
+                        print("No")
+                
                 # Complete the order
-                place_order = False
+                        place_order = False
                 # Since the customer decided to stop ordering, thank them for
                 # their order
-                print("Thank you for your order.")
+                        print("Thank you for your order.")
                 # Exit the keep ordering question loop
-                break
-
+                        break
+                # Customer typed an invalid input
+                    case _:
                 # Tell the customer to try again
-                print("Try again")
+                        print("Try again")
 
 # Print out the customer's order
 print("This is what we are preparing for you.\n")
@@ -192,25 +203,28 @@ print("Item name                 | Price  | Quantity")
 print("--------------------------|--------|----------")
 
 # 6. Loop through the items in the customer's order
-for user_selection in menu_items.keys():
-     print ("Preparing")
+for user_selection in range(len(order)):
+    print ("Preparing")
     # 7. Store the dictionary items as variables
-    
+    item_name = order[user_selection]["item_name"]
+    price = order[user_selection]["price"]
+    quantity = order[user_selection]["quantity"]
+
 
     # 8. Calculate the number of spaces for formatted printing
-field_width = 20
-text = "Thank you"
-spaces_needed = field_width - len(text)
-print(" " * spaces_needed + text)
+    field_width = 20
+    text = "Thank you"
+    spaces_needed = field_width - len(text)
+    print(" " * spaces_needed + text)
 
     # 9. Create space strings
-spaces_5 = ' ' *10
-print(spaces_5)
+    spaces_5 = ' ' *10
+    print(spaces_5)
 
     # 10. Print the item name, price, and quantity
-print("item", "number","quantity")
+    print("item", "number","quantity")
 
 # 11. Calculate the cost of the order using list comprehension
 # Multiply the price by quantity for each item in the order list, then sum()
 # and print the prices.
-total_cost = user_selection 
+total_cost = sum(item_name * price * quantity)
