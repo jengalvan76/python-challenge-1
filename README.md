@@ -1,7 +1,7 @@
 # python-challenge-1
 Module 2 Challenge - Programming for AI: Part 1
-**Welcome to the Good Days Food Truck**,
-**Conclusion**
+**Welcome to the Good Days Food Truck**
+- **Conclusion**
 The scope of this assingment included the following objectives:
 - Lists 
 - Variables
@@ -12,7 +12,7 @@ The scope of this assingment included the following objectives:
 and contained many additional python commands including the following:
 - input
 - print
-- calculations,
-**Overall,**
+- calculations
+- **Overall,**
 this assignment was very complex as it contained many of the objectives listed above and was very difficult to execute.
 
