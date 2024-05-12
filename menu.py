@@ -55,7 +55,7 @@ menu = {
 order = []
 
 # Launch the store and present a greeting to the customer
-print("Welcome to the variety food truck.")
+print("Welcome to the Good Days food truck.")
 
 # Customers may want to order multiple items, so let's create a continuous
 # loop
