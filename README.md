@@ -9,7 +9,6 @@ The scope of this assingment included the following objectives:
 - Match Case
 - While / For Loop, Break
 - Dictionaries
-and contained many additional python commands including the following:
 - input
 - print
 - calculations
