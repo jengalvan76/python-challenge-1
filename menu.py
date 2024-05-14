@@ -206,12 +206,14 @@ print("--------------------------|--------|----------")
 for user_selection in range(len(order)):
     print ("Preparing")
     # 7. Store the dictionary items as variables
-    item_name = order[user_selection]["item_name"]
+    print(order[user_selection])
+    item_name = order[user_selection]["item name"]
     price = order[user_selection]["price"]
     quantity = order[user_selection]["quantity"]
 
 
-    # 8. Calculate the number of spaces for formatted printing
+    # 8. Calculate the number of spaces for formatted printing3
+
     field_width = 20
     text = "Thank you"
     spaces_needed = field_width - len(text)
@@ -227,4 +229,5 @@ for user_selection in range(len(order)):
 # 11. Calculate the cost of the order using list comprehension
 # Multiply the price by quantity for each item in the order list, then sum()
 # and print the prices.
-total_cost = sum(item_name * price * quantity)
+total_cost = price * quantity
+print(total_cost)
